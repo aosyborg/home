@@ -19,8 +19,8 @@ set number          "show line numbers
 set tags=tags;/     "search for 'tags' file all the way up the directory tree
 
 " mouse support
-"set mouse=a             "Use the mouse in all modes
-"set mousemodel=popup    "Use a GUI-style context menu
+set mouse=a             "Use the mouse in all modes
+set mousemodel=popup    "Use a GUI-style context menu
 
 " Special characters
 set list                "show some special characters
