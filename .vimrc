@@ -5,7 +5,7 @@ set tabstop=4           "Tab width
 set softtabstop=4       "Soft tabstop
 set shiftwidth=4        "how much to shift text when formatting
 set textwidth=120       "Text width
-"set expandtab           "use spaces instead of tabs
+set expandtab           "use spaces instead of tabs
 
 " Search settings
 set nohlsearch      "Don't highlight searches
@@ -34,6 +34,8 @@ colorscheme railscasts
 
 " Plugins
 source ~/.vim/plugin/matchit.vim
+source ~/.vim/plugin/php-doc.vim
+map <C-o> :set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>
 
 " Misc stuff
 set background=dark             "We have a dark background
@@ -56,4 +58,3 @@ autocmd BufNewFile *.php      source /home/david/.vim/templates/php_header
 autocmd bufnewfile *.php exe "1," . 10 . "g/File Name:.*/s//File Name: " .expand("%")
 autocmd bufnewfile *.php exe "1," . 10 . "g/Creation Date:.*/s//Creation Date: " .strftime("%c")
 autocmd Bufwritepre,filewritepre *.php execute "normal ma"
-autocmd Bufwritepre,filewritepre *.php exe "1," . 10 . "g/Last Modified:.*/s/Last Modified:.*/Last Modified: " .strftime("%c")
