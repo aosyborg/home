@@ -1,3 +1,4 @@
+" Indenting
 set autoindent          "Auto indenting
 set cindent             "auto un-indent close brackets
 set cinoptions=>4       "one tab only
@@ -31,6 +32,21 @@ set fileformats=unix    "show DOS line endings
 " Color scheme
 set t_Co=256
 colorscheme railscasts
+set cul                                       " highlight current line
+
+" Remap jj to escape in insert mode
+inoremap jj <Esc>
+nnoremap JJJJ <Nop>
+
+" Center screen on next search term
+map N Nzz
+map n nzz
+
+" Because I can't type
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
 
 " Plugins
 source ~/.vim/plugin/matchit.vim
@@ -52,6 +68,7 @@ set encoding=utf-8              "Use UTF-8 as standard encoding
 set backspace=indent,eol,start  "Make backspace more flexible
 set ruler                       "Always show current positions along the bottom
 set formatoptions=torc          "Do some neat comment stuff for us
+set directory=/tmp              "Keep swap files in /tmp
 
 " Templates
 autocmd BufNewFile *.php      source /home/david/.vim/templates/php_header
