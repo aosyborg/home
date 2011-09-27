@@ -1,11 +1,11 @@
-" Indenting
+" Conform to PSPIncs source formatting rules
 set autoindent          "Auto indenting
 set cindent             "auto un-indent close brackets
 set cinoptions=>4       "one tab only
 set tabstop=4           "Tab width
 set softtabstop=4       "Soft tabstop
 set shiftwidth=4        "how much to shift text when formatting
-set textwidth=120       "Text width
+set textwidth=90       "Text width
 set expandtab           "use spaces instead of tabs
 
 " Search settings
@@ -21,7 +21,6 @@ set tags=tags;/     "search for 'tags' file all the way up the directory tree
 
 " mouse support
 set mouse=a             "Use the mouse in all modes
-set mousemodel=popup    "Use a GUI-style context menu
 
 " Special characters
 set list                "show some special characters
@@ -32,15 +31,20 @@ set fileformats=unix    "show DOS line endings
 " Color scheme
 set t_Co=256
 colorscheme railscasts
-set cul                                       " highlight current line
+au BufNewFile,BufRead *.phtml set syntax=php
+au BufNewFile,BufRead *.ctp set syntax=php
+set cul                 " highlight current line
 
 " Remap jj to escape in insert mode
 inoremap jj <Esc>
 nnoremap JJJJ <Nop>
 
 " Center screen on next search term
-map N Nzz
-map n nzz
+:nmap N Nzz
+:nmap n nzz
+
+" README file help
+:imap <leader><CR> <Esc>YpVr=o<CR>
 
 " Because I can't type
 :command WQ wq
@@ -51,7 +55,9 @@ map n nzz
 " Plugins
 source ~/.vim/plugin/matchit.vim
 source ~/.vim/plugin/php-doc.vim
+source ~/.vim/plugin/hexHighlight.vim
 map <C-o> :set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>
+map <F4> :TlistToggle<CR>
 
 " Misc stuff
 set background=dark             "We have a dark background
@@ -70,8 +76,22 @@ set ruler                       "Always show current positions along the bottom
 set formatoptions=torc          "Do some neat comment stuff for us
 set directory=/tmp              "Keep swap files in /tmp
 
-" Templates
-autocmd BufNewFile *.php      source /home/david/.vim/templates/php_header
-autocmd bufnewfile *.php exe "1," . 10 . "g/File Name:.*/s//File Name: " .expand("%")
-autocmd bufnewfile *.php exe "1," . 10 . "g/Creation Date:.*/s//Creation Date: " .strftime("%c")
-autocmd Bufwritepre,filewritepre *.php execute "normal ma"
+" Right column bar
+set colorcolumn=90
+
+"Delete trailing white space
+func! DeleteTrailingWS()
+  exe  "normal mz"
+  retab
+  %s/\s\+$//ge
+  %s/\n\{3,\}/\r\r/ge
+  exe  "normal `z"
+endfunc
+autocmd  BufWrite  *.php :call  DeleteTrailingWS()
+autocmd  BufWrite  *.phtml :call  DeleteTrailingWS()
+autocmd  BufWrite  *.ctp :call  DeleteTrailingWS()
+autocmd  BufWrite  *.js :call  DeleteTrailingWS()
+autocmd  BufWrite  *.css :call  DeleteTrailingWS()
+autocmd  BufWrite  *.cc :call  DeleteTrailingWS()
+autocmd  BufWrite  *.h :call  DeleteTrailingWS()
+autocmd  BufWrite  *.tmx :call  DeleteTrailingWS()
