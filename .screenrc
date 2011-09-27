@@ -23,7 +23,7 @@ escape ``
 altscreen on
 
 # Default screens
-screen -t shell 0 
+screen -t shell 1 
 
 # Add users for screen sharing
 multiuser off
