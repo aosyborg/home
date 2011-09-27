@@ -44,10 +44,15 @@ hi link htmlTag                     xmlTag
 hi link htmlTagName                 xmlTagName
 hi link htmlEndTag                  xmlEndTag
 
+hi MatchParen guifg=#f6f3e8 guibg=#857b6f gui=bold
+hi Pmenu      guifg=#f6f3e8 guibg=#444444
+hi PmenuSel   guifg=#000000 guibg=#cae682
+
 highlight Normal                    guifg=#E6E1DC guibg=#111111 
 highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15	
 highlight CursorLine                guibg=#000000 ctermbg=233 cterm=NONE
 
+highlight ColorColumn               guibg=#000000 ctermbg=233 cterm=NONE
 highlight Comment                   guifg=#BC9458 ctermfg=180 gui=italic
 highlight Constant                  guifg=#6D9CBE ctermfg=73
 highlight Define                    guifg=#CC7833 ctermfg=173
