@@ -40,7 +40,3 @@ editor = vim
 [user]
     name = "David Symons"
     email = "symons@aospace.com"
-
-[github]
-    user = "aosyborg"
-    token = "47f9666db968bf60934602132d97b73d"
