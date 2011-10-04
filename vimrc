@@ -1,5 +1,4 @@
-" Conform to PSPIncs source formatting rules
-set autoindent          "Auto indenting
+
 set cindent             "auto un-indent close brackets
 set cinoptions=>4       "one tab only
 set tabstop=4           "Tab width
@@ -52,6 +51,24 @@ nnoremap JJJJ <Nop>
 :command W w
 :command Q q
 
+" Sudo write files with :w!!
+cmap w!! %!sudo tee > /dev/null %
+
+" Auto save when you lose focus
+au FocusLost * :wa
+
+" Move between splits with Ctrl+W, hjkl
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" have <esc> remove search highlighting
+nnoremap <silent> <esc> :noh<return><esc> 
+
+" Start scrolling when within 5 lines near the top/bottom
+set scrolloff=5
+
 " Plugins
 source ~/.vim/plugin/matchit.vim
 source ~/.vim/plugin/php-doc.vim
@@ -95,3 +112,4 @@ autocmd  BufWrite  *.css :call  DeleteTrailingWS()
 autocmd  BufWrite  *.cc :call  DeleteTrailingWS()
 autocmd  BufWrite  *.h :call  DeleteTrailingWS()
 autocmd  BufWrite  *.tmx :call  DeleteTrailingWS()
+autocmd  BufWrite  *.py :call  DeleteTrailingWS()
