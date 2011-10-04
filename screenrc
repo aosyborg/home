@@ -16,14 +16,15 @@ shelltitle ''
 defscrollback 5000
 
 # Change command character to backtick
-escape `` 
+escape ``
 
 # Stop programs (like vim) from leaving their contents
 # in the window after they exit
 altscreen on
 
 # Default screens
-screen -t shell 1 
+screen -t shell 1
+bind c screen 1
 
 # Add users for screen sharing
 multiuser off
