@@ -34,6 +34,9 @@ ccd() {
 
     ls
 }
+jd() {
+    \cd **/"$@"
+}
 
 # Usage: rg <search term> [extension]
 rg() {
