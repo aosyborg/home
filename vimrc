@@ -1,4 +1,4 @@
-
+set autoindent          "Auto indenting
 set cindent             "auto un-indent close brackets
 set cinoptions=>4       "one tab only
 set tabstop=4           "Tab width
@@ -62,9 +62,6 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-
-" have <esc> remove search highlighting
-nnoremap <silent> <esc> :noh<return><esc> 
 
 " Start scrolling when within 5 lines near the top/bottom
 set scrolloff=5
