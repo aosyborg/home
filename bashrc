@@ -1,6 +1,7 @@
-export PATH=$PATH:/home/david/bin/
+export PATH=$PATH:/var/lib/gems/1.8/bin/:/home/david/bin/
 export EDITOR=vim
-export PS1="\u@\h:\w\$ "
+#export PS1="\u@\h:\w\$ "
+export PS1="\[\033[1;32m\][\t] \[\033[0;34m\][\u@\h \w]\$ \[\033[0m\]"
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 export CDPATH=$CDPATH:/var/www
