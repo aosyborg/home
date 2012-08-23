@@ -13,8 +13,6 @@ alias rm='rm -r -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias cd='ccd'
-alias aospace='ssh aospace.com -p 1376'
-alias aosyborg='ssh aosyborg.com -p 1376'
 alias tmux="tmux -2"
 
 # Erase duplicates in history
