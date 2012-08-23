@@ -32,6 +32,7 @@ set t_Co=256
 colorscheme railscasts
 au BufNewFile,BufRead *.phtml set syntax=php
 au BufNewFile,BufRead *.ctp set syntax=php
+au BufNewFile,BufRead *.less set filetype=less
 set cul                 " highlight current line
 
 " Remap jj to escape in insert mode
@@ -41,6 +42,10 @@ nnoremap JJJJ <Nop>
 " Center screen on next search term
 :nmap N Nzz
 :nmap n nzz
+
+" Save and run scripts
+:map <F5> <Esc>:w<CR>:!python %:p<CR>
+:map <F6> <Esc>:w<CR>:!php %:p<CR>
 
 " README file help
 :imap <leader><CR> <Esc>YpVr=o<CR>
@@ -67,6 +72,7 @@ noremap <C-l> <C-w>l
 set scrolloff=5
 
 " Plugins
+filetype plugin on " JSLint
 source ~/.vim/plugin/matchit.vim
 source ~/.vim/plugin/php-doc.vim
 source ~/.vim/plugin/hexHighlight.vim
