@@ -40,4 +40,7 @@
 
 [user]
     name = "David Symons"
-    email = "david.symons@zonarsystems.com"
+    email = "symons@aospace.com"
+
+[push]
+    default = current
