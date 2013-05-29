@@ -1,5 +1,6 @@
 export PATH=$PATH:/var/lib/gems/1.8/bin/:/home/david/bin/
 export EDITOR=vim
+export ZF2_PATH=/var/www/library/zf-2.0.3
 #export PS1="\u@\h:\w\$ "
 export PS1="\[\033[1;32m\][\t] \[\033[0;34m\][\u@\h \w]\$ \[\033[0m\]"
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
@@ -14,6 +15,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias cd='ccd'
 alias tmux="tmux -2"
+alias vmi="vim" # I can't type
 
 # Erase duplicates in history
 export HISTCONTROL=erasedups
@@ -21,6 +23,9 @@ export HISTCONTROL=erasedups
 export HISTSIZE=20000
 # Append to the history file when exiting instead of overwriting it
 shopt -s histappend
+
+# Set bash to use vim editing mode
+set -o vi
 
 # Custom functions
 ccd() {

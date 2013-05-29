@@ -33,9 +33,12 @@ colorscheme railscasts
 au BufNewFile,BufRead *.phtml set syntax=php
 au BufNewFile,BufRead *.ctp set syntax=php
 au BufNewFile,BufRead *.less set filetype=less
+au BufRead,BufNewFile *.twig set filetype=htmljinja
 set cul                 " highlight current line
 
-" Remap jj to escape in insert mode
+" Remap jj/kk to escape in insert mode
+inoremap kk <Esc>
+nnoremap KKKK <Nop>
 inoremap jj <Esc>
 nnoremap JJJJ <Nop>
 
