@@ -33,6 +33,7 @@ colorscheme railscasts
 au BufNewFile,BufRead *.phtml set syntax=php
 au BufNewFile,BufRead *.ctp set syntax=php
 au BufNewFile,BufRead *.less set filetype=less
+au BufRead,BufNewFile *.twig set filetype=htmljinja
 set cul                 " highlight current line
 
 " Remap jj to escape in insert mode
@@ -94,10 +95,10 @@ set encoding=utf-8              "Use UTF-8 as standard encoding
 set backspace=indent,eol,start  "Make backspace more flexible
 set ruler                       "Always show current positions along the bottom
 set formatoptions=torc          "Do some neat comment stuff for us
-set directory=/tmp              "Keep swap files in /tmp
+set directory=$HOME/.vim/tmp    "Keep swap files in /tmp
 
 " Right column bar
-set colorcolumn=90
+" set colorcolumn=90
 
 "Delete trailing white space
 func! DeleteTrailingWS()
@@ -116,3 +117,4 @@ autocmd  BufWrite  *.cc :call  DeleteTrailingWS()
 autocmd  BufWrite  *.h :call  DeleteTrailingWS()
 autocmd  BufWrite  *.tmx :call  DeleteTrailingWS()
 autocmd  BufWrite  *.py :call  DeleteTrailingWS()
+autocmd  BufWrite  *.twig :call  DeleteTrailingWS()

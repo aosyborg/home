@@ -41,3 +41,6 @@
 [user]
     name = "David Symons"
     email = "symons@aospace.com"
+
+[push]
+    default = current
