@@ -95,7 +95,7 @@ set encoding=utf-8              "Use UTF-8 as standard encoding
 set backspace=indent,eol,start  "Make backspace more flexible
 set ruler                       "Always show current positions along the bottom
 set formatoptions=torc          "Do some neat comment stuff for us
-set directory=$HOME/.vim/tmp    "Keep swap files in /tmp
+set directory=$HOME/.vim/tmp    "Keep swap files in tmp dir
 
 " Right column bar
 " set colorcolumn=90
