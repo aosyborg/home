@@ -1,6 +1,7 @@
 [core]
     editor = vim
     pager=less -r
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
 [color]
     ui = auto
@@ -13,18 +14,11 @@
     frag = magenta bold
     old = red bold
     new = green bold
+    whitespace = red reverse
 [color "status"]
     added = yellow
     changed = green
     untracked = cyan
-
-
-[color]
-    ui = true
-[color "diff"]
-    whitespace = red reverse
-[core]
-    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
 [alias]
     st = status
