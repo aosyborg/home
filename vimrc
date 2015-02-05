@@ -4,8 +4,9 @@ set cinoptions=>4       "one tab only
 set tabstop=4           "Tab width
 set softtabstop=4       "Soft tabstop
 set shiftwidth=4        "how much to shift text when formatting
-set textwidth=90       "Text width
+set textwidth=120       "Text width
 set expandtab           "use spaces instead of tabs
+set eol                 "Adds newline to end of file
 
 " Search settings
 set nohlsearch      "Don't highlight searches
@@ -100,7 +101,7 @@ set formatoptions=torc          "Do some neat comment stuff for us
 set directory=$HOME/.vim/tmp    "Keep swap files in tmp dir
 
 " Right column bar
-" set colorcolumn=90
+set colorcolumn=120
 
 "Delete trailing white space
 func! DeleteTrailingWS()
@@ -110,6 +111,16 @@ func! DeleteTrailingWS()
   %s/\n\{3,\}/\r\r/ge
   exe  "normal `z"
 endfunc
+
+" Because python has to be special
+func! PythonDeleteTrailingWS()
+  exe  "normal mz"
+  retab
+  %s/\s\+$//ge
+  %s/\n\{4,\}/\r\r/ge
+  exe  "normal `z"
+endfunc
+
 autocmd  BufWrite  *.php :call  DeleteTrailingWS()
 autocmd  BufWrite  *.phtml :call  DeleteTrailingWS()
 autocmd  BufWrite  *.ctp :call  DeleteTrailingWS()
@@ -118,6 +129,8 @@ autocmd  BufWrite  *.css :call  DeleteTrailingWS()
 autocmd  BufWrite  *.cc :call  DeleteTrailingWS()
 autocmd  BufWrite  *.h :call  DeleteTrailingWS()
 autocmd  BufWrite  *.tmx :call  DeleteTrailingWS()
-autocmd  BufWrite  *.py :call  DeleteTrailingWS()
+autocmd  BufWrite  *.py :call  PythonDeleteTrailingWS()
 autocmd  BufWrite  *.twig :call  DeleteTrailingWS()
 autocmd  BufWrite  *.sql :call  DeleteTrailingWS()
+autocmd  BufWrite  *.hbs :call  DeleteTrailingWS()
+
