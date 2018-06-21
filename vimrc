@@ -4,7 +4,7 @@ set cinoptions=>4       "one tab only
 set tabstop=4           "Tab width
 set softtabstop=4       "Soft tabstop
 set shiftwidth=4        "how much to shift text when formatting
-set textwidth=120       "Text width
+set textwidth=100       "Text width
 set expandtab           "use spaces instead of tabs
 set eol                 "Adds newline to end of file
 
@@ -20,7 +20,7 @@ set number          "show line numbers
 set tags=tags;/     "search for 'tags' file all the way up the directory tree
 
 " mouse support
-set mouse=a             "Use the mouse in all modes
+"set mouse=a             "Use the mouse in all modes
 
 " Special characters
 set list                "show some special characters
@@ -35,6 +35,7 @@ au BufNewFile,BufRead *.phtml set syntax=php
 au BufNewFile,BufRead *.ctp set syntax=php
 au BufNewFile,BufRead *.less set filetype=less
 au BufRead,BufNewFile *.twig set filetype=htmljinja
+autocmd BufNewFile,BufRead *.json set ft=javascript
 set cul                 " highlight current line
 
 " Remap jj/kk to escape in insert mode
@@ -50,9 +51,6 @@ nnoremap JJJJ <Nop>
 " Save and run scripts
 :map <F5> <Esc>:w<CR>:!python %:p<CR>
 :map <F6> <Esc>:w<CR>:!php %:p<CR>
-
-" README file help
-:imap <leader><CR> <Esc>YpVr=o<CR>
 
 " Because I can't type
 :command WQ wq
@@ -101,7 +99,7 @@ set formatoptions=torc          "Do some neat comment stuff for us
 set directory=$HOME/.vim/tmp    "Keep swap files in tmp dir
 
 " Right column bar
-set colorcolumn=120
+set colorcolumn=100
 
 "Delete trailing white space
 func! DeleteTrailingWS()
@@ -121,7 +119,7 @@ func! PythonDeleteTrailingWS()
   exe  "normal `z"
 endfunc
 
-autocmd  BufWrite  *.php :call  DeleteTrailingWS()
+"autocmd  BufWrite  *.php :call  DeleteTrailingWS()
 autocmd  BufWrite  *.phtml :call  DeleteTrailingWS()
 autocmd  BufWrite  *.ctp :call  DeleteTrailingWS()
 autocmd  BufWrite  *.js :call  DeleteTrailingWS()
@@ -134,3 +132,4 @@ autocmd  BufWrite  *.twig :call  DeleteTrailingWS()
 autocmd  BufWrite  *.sql :call  DeleteTrailingWS()
 autocmd  BufWrite  *.hbs :call  DeleteTrailingWS()
 
+cabbrev E Explore
