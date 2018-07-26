@@ -1,4 +1,4 @@
-export PATH=$PATH:/home/david/bin/:/opt/local/lib/mysql56/bin
+export PATH=$PATH:$HOME/bin/
 export EDITOR=vim
 export PS1="\[\033[1;32m\][\t] \[\033[0;34m\][\u@\h \w]\$ \[\033[0m\]"
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
@@ -13,8 +13,6 @@ alias cd='ccd'
 alias pfm='tripit clean'
 alias tmux="tmux -2"
 alias vmi="vim" # I can't type
-alias vpn-connect="/usr/local/bin/snx -s naaccess.concursolutions.com -u dsymons@concur.concurtech.org"
-alias mysql-prod="/opt/local/lib/mysql55/bin/mysql -u reporting -pr3p0rt1ng -h seapr1tripdb05.concurasp.com itinerator"
 alias json="json_reformat"
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
@@ -41,10 +39,11 @@ ccd () {
 
     ls
 }
+
 jd () {
     \cd **/"$@"
 }
 
-latest-tripit-utils () {
-    curl -s -d 'items.find({"$and":[{"repo":"ext-pypi-selfserve-local"},{"name":{"$match":"tripit_utils*"}}]}).sort({"$desc":["created"] }).limit(1)' https://artifactory.concurtech.net/artifactory/api/search/aql --user 'jenkins-build:kmaYi}yhyC5e' | jq -r ".results[0].name"
+hopon () {
+    docker-compose exec "$1" /bin/bash
 }
